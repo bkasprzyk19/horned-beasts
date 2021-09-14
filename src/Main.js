@@ -72,7 +72,7 @@ class BeastImage extends Component {
       <div>
         <Image onClick={this.handleClick} src={this.props.bio.image_url} alt="other One Beast" rounded fluid/>
         {/* <h3>{this.state.status}</h3> */}
-        <h3>{this.props.bio.title + ' has received ' + this.state.count + ' votes.'}</h3>
+        <h3>{this.props.bio.title + ' : ❤️ x ' + this.state.count + '.'}</h3>
 
       </div>
     )
