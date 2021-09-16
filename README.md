@@ -1,3 +1,43 @@
+
+# Feature #1 Display a Modal
+- 2 hr estimated time.
+- start 130 pm end 330 pm.
+- actual time needed: appx 4.5 hours working on this slowly and researching things. Not complete though.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
