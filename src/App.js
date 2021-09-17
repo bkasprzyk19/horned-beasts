@@ -4,8 +4,8 @@ import  Container  from 'react-bootstrap/Container';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
-import beastBios from './data.json';
-import hornedBeastM from './hornedBeast.js';
+
+import SelectedBeastModal from './SelectedBeastModal.js';
 
 
 
@@ -16,25 +16,26 @@ class App extends Component {
     super(props);
     this.state = {
       selected: false,
-      selectedBeast: beastBios[0],
+      selectedBeast: {},
     }
   }
 
   handleShow = () => {
+    console.log('test');
     this.setState({selected: true})
   }
   handleHide = () => {
     this.setState({selected: false})
   }
-  handleChange = (newBeast) => {
-    this.setState({selectedBeast: newBeast})
+  handleChange = ( beast) => {
+    this.setState({selectedBeast: beast})
   }
   render () {
   return (
-    <Container>
+    <Container fluid>
       <Header title="welcome to horned beast selector.."/>
-      <Main message="Choose wisely.." beastBios={beastBios} handleShow={this.handleShow} handleChange={this.handleChange} />
-      <hornedBeastM selectedBeast={this.state.selectedBeast} show={this.state.selected} hide={this.state.selected} beastBios={beastBios} image_url={this.props.image_url} title={this.props.title} description= {this.props.description}/>
+      <Main message="Choose wisely.." handleShow={this.handleShow} handleChange={this.handleChange} />
+      <SelectedBeastModal beast={this.state.selectedBeast} handleHide={this.handleHide} show={this.state.selected}/>
       <Footer text="conclusion"/>
 
     </Container>
