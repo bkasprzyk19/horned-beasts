@@ -4,22 +4,22 @@ import { Component } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import beastBios from './data.json';
+import HornedBeastM from './hornedBeast.js';
 
 
 class Map extends Component {
 
   render(){
-const beastlyBios = beastBios;
-
-  
 
   return (
-   const biosRow = () => (
-  <div>
-    <Row>{beastlyBios.map(title => <Col key={title}> {title}</Col> )}</Row></div>);
+   
+  <Container>
+    <Row>{beastBios.map((beast, index) => (<HornedBeastM key={index} title={beast.title} image={beast.image_url} description={beast.description} /> ))}
+    </Row>
+    </Container>
 
 
     
-)
+);
 }}
 export default Map;

@@ -1,47 +1,66 @@
 import { Component } from 'react';
-import  Container from 'react-bootstrap/Container';
-import beastBios from './data.json';
+
 import  Button from 'react-bootstrap/Button';
-import  Modal from 'react-bootstrap/Modal';
-import Image from 'react-bootstrap/Image';
+
+import  Card  from 'react-bootstrap/Card';
 
 
 
-class hornedBeastM extends Component {
-  render() {
-    const bios = this.props.beastBios;
+class HornedBeast extends Component {
+
+  
+  constructor(props) {
+      super(props);
+      this.state = {
+        count: 0,
+        
+      }
+    }
+    handleClick = ()=> {
       
-        return (
-          <Modal show={this.props.show} hide={this.props.hide}>
-            <Modal.Header closeButton>
-              <Modal.Title>{this.props.title}</Modal.Title>
-            </Modal.Header>
-              <Modal.Body>
-              <hornedBeastM bio={this.props.hornedBeast}/>}  
-              <p>{'Description: ' + this.props.bio.description}</p>
-              <p>{'# of horns: ' + this.props.bio.horns}</p></Modal.Body>
-              <Modal.Footer>
-                <Button varient="primary" onClick={this.props.hide}>
-                  Close
-                </Button>
-                
-              </Modal.Footer>
-            </Modal>
-          );
-  }
-}
+      
+      this.props.handleChange(this.props.beast);
+      this.props.handleShow();
+    }
 
-class hornedBeast extends Component {
-  render (){
-    return (
-      <>
-      <h2>{this.props.bio.title}</h2>
-      <Image onClick={this.handleClick} src={this.props.bio.image_url} alt='nothing special'/>
-      <p>{this.props.bio.description}</p>
-      </>
-    );
+    handleCountClick = () => {
+      const countUp = this.state.count + 1;
+      this.setState({
+        count: countUp,
+      });
+    }
+  
+    render() {
+      return(
+        <Card>
+          <Card.Img onClick={this.handleClick} varient="top" src={this.props.beast.image_url} alt={this.props.beast.description} />
+          <Card.Body>
+            <Card.Title>{this.props.beast.title}</Card.Title>
+            <Card.Text>
+              {this.props.beast.description}
+            </Card.Text>
+            <Button onClick={this.handleCountClick} varient="danger">{this.state.count}</Button>
+          </Card.Body>
+        </Card>
+      )
+    }
   }
-}
+  
+
+
+
+
+// class hornedBeast extends Component {
+//   render (){
+//     return (
+//       <>
+//       <h2>{this.props.bio.title}</h2>
+//       <Image onClick={this.handleClick} src={this.props.bio.image_url} alt='nothing special'/>
+//       <p>{this.props.bio.description}</p>
+//       </>
+//     );
+//   }
+// }
     
       
       
@@ -53,4 +72,4 @@ class hornedBeast extends Component {
   
 
 
-export default hornedBeastM;
+export default HornedBeast;
