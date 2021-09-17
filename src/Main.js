@@ -23,9 +23,13 @@ class Main extends Component {
       let updatedBeastsData;
 
       if (choice === 'all') {
-        // do nothing to filter
+        updatedBeastsData = beastsData;
+        return updatedBeastsData;
       } else if (choice === 'byHorns'){
         updatedBeastsData = newArr;
+        return updatedBeastsData;
+      }else {
+        console.log('didnt read for filter');
       }
     }
   
