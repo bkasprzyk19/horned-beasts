@@ -10,6 +10,27 @@ import beastsData from './data.json';
 
 class Main extends Component {
 
+
+  sortByHorns = (beastsData) => {
+    const newArr= beastsData.sort(function(x,y) {
+      return x.horns-y.horns;
+    });
+    return newArr;
+  };
+
+    handleSelect = (choice, newArr) => {
+
+      let updatedBeastsData;
+
+      if (choice === 'all') {
+        // do nothing to filter
+      } else if (choice === 'byHorns'){
+        updatedBeastsData = newArr;
+      }
+    }
+  
+    
+
   render () {
     return ( 
     <Container fluid>
